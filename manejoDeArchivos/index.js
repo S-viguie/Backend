@@ -124,10 +124,13 @@ class Contenedor {
 
 const products = new Contenedor("productos.json")
 
+module.exports = {
+    products
+}
 // Prueba de métodos
 
-products.save({name: "Pera", price: 800, thumbnail:"https://www.herbazest.com/imgs/d/8/7/551784/pera.jpg"})
+/* products.save({name: "Pera", price: 800, thumbnail:"https://www.herbazest.com/imgs/d/8/7/551784/pera.jpg"})
 products.getById(1)
 products.getAll()
 products.deleteById(2)
-products.deleteAll()
+products.deleteAll() */
