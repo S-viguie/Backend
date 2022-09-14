@@ -32,14 +32,15 @@ class Contenedor {
             try {
                 if (await this.ifEmpty()==false) {
                     const res = JSON.parse(await fs.promises.readFile(`${this.fileName}`, 'utf-8'))
-                    obj.id= await this.createId()
+                    obj.id = await this.createId()
+                    obj.price = +(obj.price)
                     res.push(obj)
-                    await fs.promises.writeFile(`./${this.fileName}`, `${JSON.stringify(res)}`)
+                    await fs.promises.writeFile(`./${this.fileName}`, `${JSON.stringify(res, null, 2)}`)
                     console.log("Objeto guardado con éxito!")
                     return (obj.id)}
                 else {
                     obj.id= await this.createId()
-                    await fs.promises.writeFile(`./${this.fileName}`, `[${JSON.stringify(obj)}]`)
+                    await fs.promises.writeFile(`./${this.fileName}`, `[${JSON.stringify(obj, null, 2)}]`)
                     console.log("Objeto guardado con éxito!")
                     return (obj.id)
                 }}
@@ -58,7 +59,7 @@ class Contenedor {
                     return (res.find(element => element.id==number))
                 } else {
                     console.log("Objeto no encontrado")
-                    return (null)
+                    return ({error: 'producto no encontrado'})
                 }
             } else {
                 console.log("Archivo vacio")
@@ -92,9 +93,14 @@ class Contenedor {
         try {
             if (await this.ifEmpty()==false) {
                 const res = JSON.parse(await fs.promises.readFile(`${this.fileName}`, 'utf-8'))
-                const dlt = res.filter((element)=> element.id!==number)
-                await fs.promises.writeFile(`./${this.fileName}`, `${JSON.stringify(dlt)}`)
-                console.log("Objeto eliminado con éxito!")
+                if (res.some(element => element.id==number)) {
+                    const dlt = res.filter((element)=> element.id!=number)
+                    await fs.promises.writeFile(`./${this.fileName}`, `${JSON.stringify(dlt, null, 2)}`)
+                    return({msg: "Objeto eliminado con éxito!"})
+                } else {
+                    console.log("Objeto no encontrado")
+                    return ({error: 'producto no encontrado'})
+                }
             } else {
                 console.log("Archivo vacio")
             }
@@ -119,15 +125,42 @@ class Contenedor {
             console.log(err)
         }
     }
+
+    putById = async (number, obj) => {
+        try {
+            if (await this.ifEmpty()==false) {
+                const res = JSON.parse(await fs.promises.readFile(`${this.fileName}`, 'utf-8'))
+                    if (res.some(element => element.id==number)) {
+                    const dlt = res.filter((element)=> element.id!=number)
+                    obj.id = number
+                    dlt.push(obj)
+                    await fs.promises.writeFile(`./${this.fileName}`, `${JSON.stringify(dlt, null, 2)}`)
+                    return({msg: "Objeto actualizado con éxito!"})
+                    } else {
+                        console.log("Objeto no encontrado")
+                        return ({error: 'producto no encontrado'})
+                    }
+            } else {
+                console.log("Archivo vacio")
+            }
+        }
+        catch {
+            console.log("ERROR!")
+            console.log(err)
+        }
+    }
 } 
 
 
 const products = new Contenedor("productos.json")
 
+module.exports = {
+    products
+}
 // Prueba de métodos
 
-products.save({name: "Pera", price: 800, thumbnail:"https://www.herbazest.com/imgs/d/8/7/551784/pera.jpg"})
+/* products.save({name: "Pera", price: 800, thumbnail:"https://www.herbazest.com/imgs/d/8/7/551784/pera.jpg"})
 products.getById(1)
 products.getAll()
 products.deleteById(2)
-products.deleteAll()
+products.deleteAll() */
