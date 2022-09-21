@@ -1,0 +1,12 @@
+<div style="display:flex; flex-direction: column; align-items: center">
+    <% productsAll.forEach(item=> { %>
+        <div style="display:flex; justify-content: center;">
+            <div style="margin: 20px 50px"><%= item.name %></div>
+            <div style="margin: 20px 50px"><%= item.price %></div>
+            <div style="margin: 20px 50px"><img style="height:100px; width:100px" src=<%= item.thumbnail %> alt=""></div>
+        </div>
+    <% }) %>
+</div>
+<div style="display: flex;justify-content: center">
+    <button><a href="/">Ir a formulario</a></button>
+</div>

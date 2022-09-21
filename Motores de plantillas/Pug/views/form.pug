@@ -1,0 +1,22 @@
+extends ./index
+
+block form
+    form(action="/productos" method="post")
+        div(style="margin-bottom: 16px;")
+            div(style="display: flex;justify-content: center;align-items: center;flex-direction: column;")
+                label(for="nombre") Nombre: 
+                br
+                input(type="text" name="name" id="nombre" style="margin-bottom: 16px;" class="input-file")
+            div(style="display: flex;justify-content: center;align-items: center;flex-direction: column;")
+                label(for="precio") Precio: 
+                br
+                input(type="number" name="price" id="precio" style="margin-bottom: 16px;" step=".01" class="input-file")
+            div(style="display: flex;justify-content: center;align-items: center;flex-direction: column;")
+                label(for="imagen") URL Imagen:
+                br
+                input(type="text" name="thumbnail" id="imagen" style="margin-bottom: 16px;" class="input-file")
+            div(style="display: flex; justify-content: center; align-items: center;")
+                input(type="submit" value="Crear producto" class="submit-button")
+    div(style="display: flex;justify-content: center")
+        button
+            a(href="/productos") Ir a productos

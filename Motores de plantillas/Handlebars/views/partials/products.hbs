@@ -1,0 +1,12 @@
+<div style="display:flex; flex-direction: column; align-items: center">
+    {{#each productsAll}}
+        <div style="display:flex; justify-content: center;">
+            <div style="margin: 20px 50px">{{this.name}}</div>
+            <div style="margin: 20px 50px">{{this.price}}</div>
+            <div style="margin: 20px 50px"><img style="heigth:100px; width:100px" src={{this.thumbnail}} alt=""></div>
+        </div>
+    {{/each}}
+</div>
+<div style="display: flex;justify-content: center">
+    <button><a href="/">Ir a formulario</a></button>
+</div>

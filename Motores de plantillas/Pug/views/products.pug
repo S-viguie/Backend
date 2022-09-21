@@ -1,0 +1,15 @@
+extends ./index
+
+block products
+    div(style="display:flex; flex-direction: column; align-items: center")
+        each item in productsAll
+            div(style="display:flex; justify-content: center;")
+                div(style="margin: 20px 50px")
+                    p=item.name
+                div(style="margin: 20px 50px")
+                    p=item.price
+                div(style="margin: 20px 50px")
+                    img(style="heigth:100px; width:100px" src=item.thumbnail alt="")
+    div(style="display: flex;justify-content: center")
+        button
+            a(href="/") Ir a formulario
