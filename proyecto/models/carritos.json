@@ -1,0 +1,43 @@
+[
+  {
+    "id": 2,
+    "timestamps": 1665417677281,
+    "productos": []
+  },
+  {
+    "id": 3,
+    "timestamps": 1665417678603,
+    "productos": []
+  },
+  {
+    "id": 4,
+    "timestamps": 1665417679263,
+    "productos": []
+  },
+  {
+    "id": 1,
+    "timestamps": 1665417176577,
+    "productos": [
+      {
+        "name": "Naranjas",
+        "descripcion": "Fruta cítrica obtenida del naranjo dulce, del naranjo amargo y de naranjos de otras variedades o híbridos, de origen asiático​",
+        "price": 700,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_laranja-256.png",
+        "stock": 100,
+        "codigo": "A001",
+        "id": 1,
+        "timestamps": 1665356142470
+      },
+      {
+        "name": "Manzanas",
+        "descripcion": "Fruto comestible de la especie Malus domestica, el manzano común. Es una fruta pomácea de forma redonda y sabor muy dulce",
+        "price": 400,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_maca-256.png",
+        "stock": 200,
+        "codigo": "A002",
+        "id": 2,
+        "timestamps": 1665356203461
+      }
+    ]
+  }
+]

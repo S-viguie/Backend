@@ -24,7 +24,6 @@ class Contenedor {
             }}
         catch (err) {
             console.log("ERROR!")
-            console.log(err)
         }
     }
 
@@ -38,29 +37,28 @@ class Contenedor {
                 res.push(obj)
                 await fs.promises.writeFile(`./models/${this.fileName}`, `${JSON.stringify(res, null, 2)}`)
                 console.log("Objeto guardado con éxito!")
-                return (obj.id)}
+                return ({id: obj.id})}
             else {
                 obj.id= await this.createId()
                 await fs.promises.writeFile(`./models/${this.fileName}`, `[${JSON.stringify(obj, null, 2)}]`)
                 console.log("Objeto guardado con éxito!")
-                return (obj.id)
+                return ({id: obj.id})
             }}
         catch (err) {
             console.log("ERROR!")
-            console.log(err)
         }
-        }
+    }
 
     getById = async (number) => {
         try{
             if (await this.ifEmpty()==false) {
                 const res = JSON.parse(await fs.promises.readFile(`./models/${this.fileName}`, 'utf-8'))
                 if (res.some(element => element.id==number)) {
-                    console.log("Objeto obtenido con éxito!")
-                    return (res.find(element => element.id==number))
+                    console.log("Producto obtenido con éxito!")
+                    return ({prod: res.find(element => element.id==number)})
                 } else {
                     console.log("Objeto no encontrado")
-                    return ({error: 'producto no encontrado'})
+                    return ({error: 'Producto no encontrado'})
                 }
             } else {
                 console.log("Archivo vacio")
@@ -77,10 +75,10 @@ class Contenedor {
             if (await this.ifEmpty()==false) {
                 const res = JSON.parse(await fs.promises.readFile(`./models/${this.fileName}`, 'utf-8'))
                 console.log("Objetos obtenidos con éxito!")
-                return (res)
+                return ({prods: res})
             } else {
                 console.log("Archivo vacio")
-                return ([])
+                return ({})
             }
         }
         catch {
@@ -106,7 +104,6 @@ class Contenedor {
         }
         catch {
             console.log("ERROR!")
-            console.log(err)
         }
     }
 

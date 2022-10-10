@@ -5,6 +5,7 @@
     "price": 700,
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_laranja-256.png",
     "stock": 100,
+    "codigo": "A001",
     "id": 1,
     "timestamps": 1665356142470
   },
@@ -14,6 +15,7 @@
     "price": 400,
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_maca-256.png",
     "stock": 200,
+    "codigo": "A002",
     "id": 2,
     "timestamps": 1665356203461
   },
@@ -23,6 +25,7 @@
     "price": 800,
     "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_pera-256.png",
     "stock": 50,
+    "codigo": "A003",
     "id": 3,
     "timestamps": 1665356280119
   }
