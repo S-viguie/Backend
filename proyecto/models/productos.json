@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Naranjas",
+    "descripcion": "Fruta cítrica obtenida del naranjo dulce, del naranjo amargo y de naranjos de otras variedades o híbridos, de origen asiático​",
+    "price": 700,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_laranja-256.png",
+    "stock": 100,
+    "id": 1,
+    "timestamps": 1665356142470
+  },
+  {
+    "name": "Manzanas",
+    "descripcion": "Fruto comestible de la especie Malus domestica, el manzano común. Es una fruta pomácea de forma redonda y sabor muy dulce",
+    "price": 400,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_maca-256.png",
+    "stock": 200,
+    "id": 2,
+    "timestamps": 1665356203461
+  },
+  {
+    "name": "Pera",
+    "descripcion": "La pera es una de las frutas que mejor tolera el organismo y de las que menos alergias producen",
+    "price": 800,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_pera-256.png",
+    "stock": 50,
+    "id": 3,
+    "timestamps": 1665356280119
+  }
+]
